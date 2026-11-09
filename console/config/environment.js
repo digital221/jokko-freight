@@ -78,6 +78,11 @@ module.exports = function (environment) {
             autoClear: true,
             clearDuration: 1000 * 3.5,
         },
+
+        // French until the person chooses otherwise. Browser language is ignored.
+        intl: {
+            defaultLocale: 'fr-fr',
+        },
     };
 
     if (environment === 'development') {

@@ -808,3 +808,66 @@ layout:
         view-profile: View profile
         keyboard-shortcuts: Show keyboard shortcuts
         changelog: Changelog
+language-switcher:
+  label: Language
+bourse:
+  notifications:
+    test-mode: Test mode. Notifications are not actually sent.
+  labels:
+    event-unknown: Unspecified event
+    freight-status:
+      all: All
+      open: Open
+      awarded: Awarded
+      funded: Funded
+      assigned: Assigned
+      in_transit: In transit
+      delivered: Delivered
+      disputed: Disputed
+      confirmed: Confirmed
+      settled: Settled
+      paid_out: Paid out
+      expired: Expired
+      cancelled: Cancelled
+    offer-status:
+      pending: Pending
+      accepted: Accepted
+      rejected: Declined
+      withdrawn: Withdrawn
+      expired: Expired
+      lapsed: Lapsed
+      not_selected: Not selected
+    offer-kind:
+      bid: Bid
+      accept: Acceptance
+      counter: Counter-offer
+      accept_price: Price acceptance
+    escrow-status:
+      awaiting_funds: Awaiting funds
+      funding_declared: Payment declared
+      held: Held in escrow
+      disputed: Disputed
+      release_ready: Ready to pay out
+      released: Released
+      refunded: Refunded
+      partially_refunded: Partially refunded
+      cancelled: Cancelled
+    payout-status:
+      pending: Pending
+      processing: Processing
+      paid: Paid
+      failed: Failed
+      cancelled: Cancelled
+    actor:
+      admin: Administration
+      carrier: Carrier
+      shipper: Shipper
+      system: System
+      driver: Driver
+    event:
+      exception_resolved: Exception resolved
+      accept_price: Price acceptance
+      test_mode: Test mode
+      not_selected: Not selected
+      offer_accepted: Offer accepted
+      offer_rejected: Offer declined
