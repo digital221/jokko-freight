@@ -1,0 +1,8 @@
+<div class="jokko-lang" role="group" aria-label={{t "language-switcher.label"}}>
+    <button type="button" class="jokko-lang__btn {{if (eq this.current "fr-fr") "is-active"}}" aria-pressed={{if (eq this.current "fr-fr") "true" "false"}} {{on "click" (fn this.choose "fr-fr")}}>
+        Français
+    </button>
+    <button type="button" class="jokko-lang__btn {{if (eq this.current "en-us") "is-active"}}" aria-pressed={{if (eq this.current "en-us") "true" "false"}} {{on "click" (fn this.choose "en-us")}}>
+        English
+    </button>
+</div>

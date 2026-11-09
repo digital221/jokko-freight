@@ -4,6 +4,7 @@ import { action } from '@ember/object';
 import isElectron from '@fleetbase/ember-core/utils/is-electron';
 import pathToRoute from '@fleetbase/ember-core/utils/path-to-route';
 import removeBootLoader from '../utils/remove-boot-loader';
+import { htmlLang, readPreferredLocale } from '../utils/preferred-locale';
 
 export default class ApplicationRoute extends Route {
     @service('universe/hook-service') hookService;
@@ -70,6 +71,7 @@ export default class ApplicationRoute extends Route {
      * @memberof ApplicationRoute
      */
     async beforeModel(transition) {
+        this.initializeLocale();
         await this.session.setup();
         await this.extensionManager.waitForBoot();
 
@@ -110,12 +112,15 @@ export default class ApplicationRoute extends Route {
     /**
      * Initializes the application's locale settings based on the current user's preferences.
      *
-     * This method retrieves the user's preferred locale using the `getOption` method from the `currentUser` service.
-     * If no locale is set by the user, it defaults to `'en-US'`. It then sets the application's locale by calling
-     * the `setLocale` method of the `intl` service with the retrieved locale.
+     * French is the default, including on the sign-in screens, whatever the
+     * browser language is. A choice saved in localStorage (`jokko.locale`) wins.
      */
     initializeLocale() {
-        const locale = this.currentUser.getOption('locale', 'en-US');
+        const locale = readPreferredLocale();
         this.intl.setLocale([locale]);
+
+        if (typeof document !== 'undefined') {
+            document.documentElement.lang = htmlLang(locale);
+        }
     }
 }
